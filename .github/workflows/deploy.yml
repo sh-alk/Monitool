@@ -1,5 +1,6 @@
 name: Deploy
 concurrency:
+  group: production
   cancel-in-progress: true
 on:
   push:
