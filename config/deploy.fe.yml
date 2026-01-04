@@ -32,6 +32,6 @@ builder:
   args:
     clear:
       VITE_API_URL: https://be-monitool.turnrow.online
-    secret:
+    secrets:
       - VITE_API_KEY
 
