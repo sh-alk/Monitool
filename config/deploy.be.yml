@@ -2,7 +2,7 @@
 service: monitool-be
 
 # Name of the container image.
-image: t-gitt/monitool-be
+image: sh-alk/monitool-be
 
 volumes:
   - monitool-be-sqlite-data:/data

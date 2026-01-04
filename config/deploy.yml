@@ -7,3 +7,4 @@ registry:
 
 ssh:
   user: root
+  keys: [ "~/.ssh/id_monitool" ]

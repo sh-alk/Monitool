@@ -2,7 +2,7 @@
 service: monitool
 
 # Name of the container image.
-image: t-gitt/monitool
+image: sh-alk/monitool
 
 # volumes:
 #   - data:/app/data

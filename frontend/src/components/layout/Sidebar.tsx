@@ -110,7 +110,7 @@ export default function Sidebar() {
                     : 'text-slate-600 group-hover:text-slate-900'
                 }`}
               >
-                Technician Logs
+                Technician Logs test
               </p>
             </Link>
 
