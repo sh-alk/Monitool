@@ -30,6 +30,8 @@ builder:
   context: ./frontend
   dockerfile: ./frontend/Dockerfile
   args:
-    VITE_API_URL: https://be-monitool.turnrow.online
-    VITE_API_KEY: "as12388kdjalsur12o12nr;3mt1"
+    clear:
+      VITE_API_URL: https://be-monitool.turnrow.online
+    secrets:
+      - VITE_API_KEY
 

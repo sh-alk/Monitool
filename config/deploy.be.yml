@@ -19,9 +19,11 @@ env:
   clear:
     DATABASE_URL: sqlite:////data/toolbox.db
     UPLOAD_DIR: /uploads
-    SECRET_KEY: "your-secret-key-change-in-production"
-    API_KEY: "as12388kdjalsur12o12nr;3mt1"
     BACKEND_CORS_ORIGINS: https://be-monitool.turnrow.online,https://monitool.turnrow.online
+  secrets:
+    - SECRET_KEY
+    - API_KEY
+
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
