@@ -1,0 +1,4 @@
+# Monitools Raspberry Pi Client Requirements
+# Install with: pip3 install -r pi_requirements.txt
+
+requests>=2.31.0

@@ -1,0 +1,41 @@
+# Name of your application. Used to uniquely configure containers.
+service: monitool-be
+
+# Name of the container image.
+image: t-gitt/monitool-be
+
+volumes:
+  - monitool-be-sqlite-data:/data
+  - monitool-be-upload-data:/uploads
+
+# Deploy to these servers.
+servers:
+  web:
+    hosts: 
+      - be-monitool.turnrow.online
+    cmd: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+env:
+  clear:
+    DATABASE_URL: sqlite:////data/toolbox.db
+    UPLOAD_DIR: /uploads
+    SECRET_KEY: "your-secret-key-change-in-production"
+    API_KEY: "as12388kdjalsur12o12nr;3mt1"
+    BACKEND_CORS_ORIGINS: https://be-monitool.turnrow.online,https://monitool.turnrow.online
+
+# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
+# Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
+#
+# Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption. 
+proxy: 
+  app_port: 8000
+  ssl: true
+  hosts:
+    - be-monitool.turnrow.online
+
+
+# Configure builder setup.
+builder:
+  arch: arm64
+  context: ./backend
+  dockerfile: ./backend/Dockerfile
