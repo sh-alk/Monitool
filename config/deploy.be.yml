@@ -20,7 +20,7 @@ env:
     DATABASE_URL: sqlite:////data/toolbox.db
     UPLOAD_DIR: /uploads
     BACKEND_CORS_ORIGINS: https://be-monitool.turnrow.online,https://monitool.turnrow.online
-  secrets:
+  secret:
     - SECRET_KEY
     - API_KEY
 
